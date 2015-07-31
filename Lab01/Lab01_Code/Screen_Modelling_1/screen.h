@@ -12,7 +12,11 @@ using namespace std;
 // *size* of any string that can be held by the string class as well as any index into
 // the string.
 
+// Enumerations
 enum Direction {HOME, FORWARD, BACK, UP, DOWN, END};
+
+// Enumerations with scoping
+// enum class Direction {HOME, FORWARD, BACK, UP, DOWN, END};
 
 class Screen {
 public:
@@ -40,6 +44,7 @@ public:
 	void down();
 	// move the cursor to the specified row and column
 	void move(string::size_type row, string::size_type col);
+	// move the cursor according to the direction given. ie. HOME, FORWARD, BACK, UP, DOWN, END
 	void move(Direction dir);
 	
 	// get the character at the cursor's current position

@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Screen_Modelling_1
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software Development II\Software Labs\Lab01\Lab01_Code"
-ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software Development II\Software Labs\Lab01\Lab01_Code\Screen_Modelling_1"
+WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code"
+ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code\Screen_Modelling_1"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Trouble Maker
-Date                   :=28/07/2015
+Date                   :=31/07/2015
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -52,7 +52,7 @@ LibPath                := $(LibraryPathSwitch).
 AR       := C:/TDM-GCC-64/bin/ar.exe rcu
 CXX      := C:/TDM-GCC-64/bin/g++.exe
 CC       := C:/TDM-GCC-64/bin/gcc.exe
-CXXFLAGS :=  -g -O0 -std=c++14 -std=c++11 -std=c99 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -std=c++14 -std=c++11 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/TDM-GCC-64/bin/as.exe
@@ -90,7 +90,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software Development II/Software Labs/Lab01/Lab01_Code/Screen_Modelling_1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Software_Labs/Lab01/Lab01_Code/Screen_Modelling_1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
@@ -98,7 +98,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
 
 $(IntermediateDirectory)/screen.cpp$(ObjectSuffix): screen.cpp $(IntermediateDirectory)/screen.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software Development II/Software Labs/Lab01/Lab01_Code/Screen_Modelling_1/screen.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/screen.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Software_Labs/Lab01/Lab01_Code/Screen_Modelling_1/screen.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/screen.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/screen.cpp$(DependSuffix): screen.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/screen.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/screen.cpp$(DependSuffix) -MM "screen.cpp"
 

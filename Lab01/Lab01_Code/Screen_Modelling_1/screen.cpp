@@ -207,21 +207,28 @@ bool Screen::checkRange( string::size_type row, string::size_type col ) const
 
 void Screen::square(string::size_type row, string::size_type col, string::size_type length) 
 {
-	length = length - 1;
 	// Testing the size of the square exists in the grid
 	if (checkRange(row, col) == false)
 	{
-		cout << "Invalid Starting Point!" << endl;
+		cout << "Invalid Starting Point! \n" << endl;
 		return;
 	}
 	
 	if (checkRange((row + length), col) == false || checkRange(row, (col + length)) == false)
 	{
-		cout << "Square Size too large for Grid!" << endl;
+		cout << "Square Size too large for Grid! \n" << endl;
 		return;
 	}
 	
-	// Drwaing a square in the grid
+	if (length == 1)
+	{
+		move(row, col);
+		set('*');
+	}
+	
+	length = length - 1;
+	
+	// Drawing a square in the grid
 	//	Draws horizontal line of the top side of the square
 	move(row, col);
 	for (int i = 1; i <= length; i++)
@@ -252,6 +259,17 @@ void Screen::square(string::size_type row, string::size_type col, string::size_t
 	{
 		set('*');
 		move(UP);
+	}
+
+	// Hollow out square
+	move(row + 1, col + 1);
+	for (int i = 1; i < (length); i++)
+	{
+		for (int j = 1; j < (length); j++)
+		{
+			move(row+i, col+j);
+			set(' ');
+		}
 	}
 	
 	return;
