@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Stop_Watch
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Lab01\Lab01_Code"
-ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Lab01\Lab01_Code\Stop_Watch"
+WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code"
+ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code\Stop_Watch"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Trouble Maker
-Date                   :=24/07/2015
+Date                   :=31/07/2015
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -90,7 +90,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/StopWatch.cpp$(ObjectSuffix): StopWatch.cpp $(IntermediateDirectory)/StopWatch.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Lab01/Lab01_Code/Stop_Watch/StopWatch.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/StopWatch.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Software_Labs/Lab01/Lab01_Code/Stop_Watch/StopWatch.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/StopWatch.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/StopWatch.cpp$(DependSuffix): StopWatch.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/StopWatch.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/StopWatch.cpp$(DependSuffix) -MM "StopWatch.cpp"
 
@@ -98,7 +98,7 @@ $(IntermediateDirectory)/StopWatch.cpp$(PreprocessSuffix): StopWatch.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/StopWatch.cpp$(PreprocessSuffix) "StopWatch.cpp"
 
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Lab01/Lab01_Code/Stop_Watch/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Software_Labs/Lab01/Lab01_Code/Stop_Watch/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 

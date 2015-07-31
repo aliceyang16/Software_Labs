@@ -5,14 +5,14 @@ class StopWatch
 {
 public:
 	StopWatch();
-	void startStopWatch();
-	void stopStopWatch();
-	void recordedTime();
+	bool startStopWatch(char&);
+	void lapTime(double&);
+	void stopStopWatch(double&);
+	double getProcessTime();
 	
 private:
-	time_t start;
-	time_t now;
-	double seconds;
+	char button;
+	double time;
 };
 
 

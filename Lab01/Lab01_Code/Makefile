@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Screen_Modelling_1 - Debug ]----------"
-	@cd "Screen_Modelling_1" && $(MAKE) -f  "Screen_Modelling_1.mk"
+	@echo "----------Building project:[ Stop_Watch - Debug ]----------"
+	@cd "Stop_Watch" && $(MAKE) -f  "Stop_Watch.mk"
 clean:
-	@echo "----------Cleaning project:[ Screen_Modelling_1 - Debug ]----------"
-	@cd "Screen_Modelling_1" && $(MAKE) -f  "Screen_Modelling_1.mk" clean
+	@echo "----------Cleaning project:[ Stop_Watch - Debug ]----------"
+	@cd "Stop_Watch" && $(MAKE) -f  "Stop_Watch.mk" clean

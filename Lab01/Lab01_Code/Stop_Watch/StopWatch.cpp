@@ -9,18 +9,29 @@ StopWatch::StopWatch()	// Constructor
 
 }
 
-void StopWatch::startStopWatch()
+bool StopWatch::startStopWatch(char& button)
 {
-	start = time(NULL);
+	bool start = false;
+	if ((button == 's') || (button == 'S'))
+	{
+		start = true;
+	}
+	return start;
 }
 
-void StopWatch::stopStopWatch()
+void StopWatch::lapTime(double& time)
 {
-	now = time(NULL);
+	cout << "Lap Time: " << time  << "s" << endl;
 }
 
-void StopWatch::recordedTime()
+void StopWatch::stopStopWatch(double& time)
 {
-	seconds = difftime(now, start);
-	cout << "Time Recorded: " << seconds << "s" << endl;
+	cout << "Stop! \n" << endl;
+	cout << "Total Time: " << time << "s" << endl;
+}
+
+double StopWatch::getProcessTime()
+{
+	clock_t time = clock();
+	return static_cast<double>(time)/CLOCKS_PER_SEC;
 }
