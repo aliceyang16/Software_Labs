@@ -9,13 +9,13 @@ int main()
 	
 	StopWatch testWatch;	// creating an object
 	char button;
-	double time;
-	cout << "Press 's' to start Stop Watch" << endl;
+	double time = 0;
+	cout << "Instructions: Press 's' to start the Stop Watch, 'Enter' to Lap Time, and 'n' to stop Stop Watch" << endl;
 	cin >> button;
 
 	if (testWatch.startStopWatch(button) == true)
 	{
-		cout << "Start!" << endl;
+		cout << "Start! \n" << endl;
 		while (button != 'n')
 		{
 			time = testWatch.getProcessTime();
