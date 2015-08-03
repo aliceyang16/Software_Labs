@@ -72,7 +72,7 @@ int main()
 	// Exercise 4.5
 	Screen Square{20, 20};
 	//Square.clear(' ');
-	Square.square(2,2,25); // pass (row, colomn, square size)
+	Square.square(2,2,10); // pass (row, colomn, square size)
 	Square.display();
 	
 	return 0;

@@ -2,8 +2,9 @@
 
 using namespace std;
 
-int main(int argc, char **argv)
+int main()
 {
-	printf("hello world\n");
-	return 0;
+    cout << "Hello World" << endl;
+
+    return 0;
 }

@@ -3,8 +3,8 @@
   <Project Name="Cpp_Revision" Path="Cpp_Revision/Cpp_Revision.project" Active="No"/>
   <Project Name="Complex_Type_1" Path="Complex_Type_1/Complex_Type_1.project" Active="No"/>
   <Project Name="Complex_Type_2" Path="Complex_Type_2/Complex_Type_2.project" Active="No"/>
-  <Project Name="Stop_Watch" Path="Stop_Watch/Stop_Watch.project" Active="Yes"/>
-  <Project Name="Screen_Modelling_1" Path="Screen_Modelling_1/Screen_Modelling_1.project" Active="No"/>
+  <Project Name="Stop_Watch" Path="Stop_Watch/Stop_Watch.project" Active="No"/>
+  <Project Name="Screen_Modelling_1" Path="Screen_Modelling_1/Screen_Modelling_1.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="Cpp_Revision" ConfigName="Debug"/>
