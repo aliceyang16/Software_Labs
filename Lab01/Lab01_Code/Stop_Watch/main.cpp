@@ -19,7 +19,7 @@ int main()
 		while (button != 'n')
 		{
 			time = testWatch.getProcessTime();
-		
+			
 			if ((button = cin.get()) == '\n')
 			{
 				testWatch.lapTime(time);

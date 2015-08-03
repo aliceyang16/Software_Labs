@@ -26,8 +26,8 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code\Stop_Watch\main.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="11" Name="CurrentLine"/>
+      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="21" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
