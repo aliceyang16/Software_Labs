@@ -4,34 +4,33 @@
 
 using namespace std;
 
-StopWatch::StopWatch()	// Constructor
+StopWatch::StopWatch() // Constructor
 {
-
 }
 
 bool StopWatch::startStopWatch(char& button)
 {
-	bool start = false;
-	if ((button == 's') || (button == 'S'))
+    bool start = false;
+    if((button == 's') || (button == 'S'))
 	{
-		start = true;
+	    start = true;
 	}
-	return start;
+    return start;
 }
 
 void StopWatch::lapTime(double& time)
 {
-	cout << "Lap Time: " << time  << "s" << endl;
+    cout << "Lap Time: " << time << "s" << endl;
 }
 
 void StopWatch::stopStopWatch(double& time)
 {
-	cout << "Stop! \n" << endl;
-	cout << "Total Time: " << time << "s" << endl;
+    cout << "Stop! \n" << endl;
+    cout << "Total Time: " << time << "s" << endl;
 }
 
 double StopWatch::getProcessTime()
 {
-	clock_t time = clock();
-	return static_cast<double>(time)/CLOCKS_PER_SEC;
+    clock_t time = clock();
+    return static_cast<double>(time) / CLOCKS_PER_SEC;
 }

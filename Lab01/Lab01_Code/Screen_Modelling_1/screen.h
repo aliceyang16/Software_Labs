@@ -13,79 +13,106 @@ using namespace std;
 // the string.
 
 // Enumerations
-enum Direction {HOME, FORWARD, BACK, UP, DOWN, END};
+enum Direction
+{
+    HOME,
+    FORWARD,
+    BACK,
+    UP,
+    DOWN,
+    END
+};
 
 // Enumerations with scoping
 // enum class Direction {HOME, FORWARD, BACK, UP, DOWN, END};
 
-class Screen {
+class Screen
+{
 public:
-	// Screen's constructor
-	Screen( string::size_type height = 8, string::size_type width = 40, char bkground = '#');
+    // Screen's constructor
+    Screen(string::size_type height = 8, string::size_type width = 40, char bkground = '#');
 
-	// get the Screen's height
-	string::size_type height() const { return _height; }
-	// get the Screen's width
-	string::size_type width() const { return _width; }
-	// get the cursor value
-	string::size_type cursor() const{ return _cursor; }
+    // get the Screen's height
+    string::size_type height() const
+    {
+	return _height;
+    }
+    // get the Screen's width
+    string::size_type width() const
+    {
+	return _width;
+    }
+    // get the cursor value
+    string::size_type cursor() const
+    {
+	return _cursor;
+    }
 
-	// place the cursor at the top-left corner of the screen
-	void home() { _cursor = 0;  return; }
-	// place the cursor at the bottom-right corner of the screen
-	void end() { _cursor = _width * _height - 1; return; }
-	// move the cursor one position to the right
-	void forward();
-	// move the cursor one position to the left
-	void back();
-	// move the cursor up one row
-	void up();
-	// move the cursor down one row
-	void down();
-	// move the cursor to the specified row and column
-	void move(string::size_type row, string::size_type col);
-	// move the cursor according to the direction given. ie. HOME, FORWARD, BACK, UP, DOWN, END
-	void move(Direction dir);
-	
-	// get the character at the cursor's current position
-	char get() const { return _screen[_cursor]; }
-	// get the character at the specified row and column
-	char get(string::size_type row, string::size_type col);
+    // place the cursor at the top-left corner of the screen
+    void home()
+    {
+	_cursor = 0;
+	return;
+    }
+    // place the cursor at the bottom-right corner of the screen
+    void end()
+    {
+	_cursor = _width * _height - 1;
+	return;
+    }
+    // move the cursor one position to the right
+    void forward();
+    // move the cursor one position to the left
+    void back();
+    // move the cursor up one row
+    void up();
+    // move the cursor down one row
+    void down();
+    // move the cursor to the specified row and column
+    void move(string::size_type row, string::size_type col);
+    // move the cursor according to the direction given. ie. HOME, FORWARD, BACK, UP, DOWN, END
+    void move(Direction dir);
 
-	// write a character on the screen at the current cursor position
-	void set( char ch );
-	// write a string of characters on the screen starting at the current cursor position
-	void set( const string& s );
-	// overwrite the entire screen with the specified character
-	void clear( char bkground = '#');
+    // get the character at the cursor's current position
+    char get() const
+    {
+	return _screen[_cursor];
+    }
+    // get the character at the specified row and column
+    char get(string::size_type row, string::size_type col);
 
-	// resize the screen
-	void reSize( string::size_type height, string::size_type width, char bkground = '#');
-	// display the screen
-	void display() const;
-	// check whether the specified co-ordinates lie within the screen
-	bool checkRange(string::size_type row, string::size_type col) const;
-	
-	void square(string::size_type row, string::size_type col, string::size_type length);
+    // write a character on the screen at the current cursor position
+    void set(char ch);
+    // write a string of characters on the screen starting at the current cursor position
+    void set(const string& s);
+    // overwrite the entire screen with the specified character
+    void clear(char bkground = '#');
+
+    // resize the screen
+    void reSize(string::size_type height, string::size_type width, char bkground = '#');
+    // display the screen
+    void display() const;
+    // check whether the specified co-ordinates lie within the screen
+    bool checkRange(string::size_type row, string::size_type col) const;
+
+    void square(string::size_type row, string::size_type col, string::size_type length);
 
 private:
-	// private member functions
-	string::size_type remainingSpace() const;
-	string::size_type row() const;
+    // private member functions
+    string::size_type remainingSpace() const;
+    string::size_type row() const;
 
-	// private data members
-	// (preceding each name with an underscore is a naming convention - not a requirement)
+    // private data members
+    // (preceding each name with an underscore is a naming convention - not a requirement)
 
-	// number of Screen rows
-	string::size_type _height;
-	// number of Screen columns
-	string::size_type _width;
-	// position of the Screen's cursor
-	string::size_type _cursor;
-	// the Screen's data is stored as a string
-	string _screen;
+    // number of Screen rows
+    string::size_type _height;
+    // number of Screen columns
+    string::size_type _width;
+    // position of the Screen's cursor
+    string::size_type _cursor;
+    // the Screen's data is stored as a string
+    string _screen;
 };
 
-
 #endif
-
