@@ -93,7 +93,7 @@
   <VirtualDirectory Name="src">
     <File Name="StopWatch.h"/>
     <File Name="StopWatch.cpp"/>
-    <File Name="main.cpp"/>
+    <File Name="StopWatch_main.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Cpp_Revision
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Lab01"
-ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Lab01\Cpp_Revision"
+WorkspacePath          := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code"
+ProjectPath            := "C:\Users\Trouble Maker\Documents\2015\Witwatersrand\Software_Development_II\Software_Labs\Lab01\Lab01_Code\Cpp_Revision"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Trouble Maker
-Date                   :=22/07/2015
+Date                   :=04/08/2015
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -71,7 +71,7 @@ Objects=$(Objects0)
 ##
 ## Main Build Targets 
 ##
-.PHONY: all clean PreBuild PrePreBuild PostBuild
+.PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
 all: $(OutputFile)
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
@@ -79,6 +79,10 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
+
+MakeIntermediateDirs:
+	@$(MakeDirCommand) "./Debug"
+
 
 $(IntermediateDirectory)/.d:
 	@$(MakeDirCommand) "./Debug"
@@ -90,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Lab01/Cpp_Revision/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Trouble Maker/Documents/2015/Witwatersrand/Software_Development_II/Software_Labs/Lab01/Lab01_Code/Cpp_Revision/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
