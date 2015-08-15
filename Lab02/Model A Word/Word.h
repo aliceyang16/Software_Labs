@@ -2,6 +2,7 @@
 #define WORD_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 // empty classes to represent different exceptions

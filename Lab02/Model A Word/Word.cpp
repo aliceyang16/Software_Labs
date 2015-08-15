@@ -3,7 +3,6 @@
 // -------------------------------------------
 
 #include "Word.h"
-using namespace std;
 
 Word::Word(const string& word)
     : _word{ word }
@@ -24,22 +23,37 @@ bool Word::operator==(const Word& rhs) const
     auto word_1 = _word;
     auto word_2 = rhs._word;
 
-    auto iterator1 = begin(word_1);
-    auto iterator2 = begin(word_2);
+    auto iterator1 = word_1.begin();
+    auto iterator2 = word_2.begin();
 
-    test = true;
     if(_word == rhs._word)
 	test = true;
     else
 	{
-	    while(iterator1 != word_1.end())
+	    while(iterator1 != word_1.end() && iterator2 != word_2.end())
 		{
+		    if(ispunct(*iterator1))
+			{
+			    word_1.erase(iterator1);
+				iterator1--;
+				iterator2--;
+			}
+		    else if(ispunct(*iterator2))
+			{
+				word_2.erase(iterator2);
+				iterator1--;
+				iterator2--;
+			}
+
 		    if(tolower(*iterator2) != towlower(*iterator1))
 			{
 			    test = false;
 			}
-		    ++iterator1;
-		    ++iterator2;
+		    else
+			test = true;
+
+		    iterator1++;
+		    iterator2++;
 		}
 	}
     return test;
