@@ -49,21 +49,21 @@ TEST(Word, canIdentifyNonIdenticalWords)
 	EXPECT_TRUE(word_without_punct == word_with_punct);
 }
 
-// TEST(Word, throwsAnExceptionIfItConsistsSolelyOfPunctuation) {
-//	EXPECT_THROW({Word testword("!@#$%");}, WordContainsNoLetters);
-//}
-//
-// TEST(Word, throwsAnExceptionIfItContainsASpace) {
-//	EXPECT_THROW({Word testword("hello there");}, WordContainsSpace);
-//}
-//
-// TEST(Word, isQueryableIfGreaterThanOrEqualToASpecifiedSize) {
-//	string test_string;
-//	test_string.resize(MIN_SIZE_FOR_QUERY, 'a');
-//	Word test_word(test_string);
-//	EXPECT_TRUE(test_word.isQueryable());
-//}
-//
+ TEST(Word, throwsAnExceptionIfItConsistsSolelyOfPunctuation) {
+	EXPECT_THROW({Word testword("!@#$%");}, WordContainsNoLetters);
+}
+
+ TEST(Word, throwsAnExceptionIfItContainsASpace) {
+	EXPECT_THROW({Word testword("hello there");}, WordContainsSpace);
+}
+
+ TEST(Word, isQueryableIfGreaterThanOrEqualToASpecifiedSize) {
+	string test_string;
+	test_string.resize(MIN_SIZE_FOR_QUERY, 'a');
+	Word test_word(test_string);
+	EXPECT_TRUE(test_word.isQueryable());
+}
+
 // TEST(Word, isNotQueryableIfLessThanASpecifiedSize) {
 //// Write this test...
 //}
