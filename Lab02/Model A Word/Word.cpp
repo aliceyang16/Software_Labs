@@ -3,6 +3,7 @@
 // -------------------------------------------
 
 #include "Word.h"
+const int MIN_SIZE_FOR_QUERY = 3;
 
 Word::Word(const string& word)
     : _word{ word }
@@ -13,27 +14,27 @@ Word::Word(const string& word)
 	throw WordContainsNoLetters();
     else
 	{
-	    int punctuation_counter = 0;
-		int space_counter = 0;
+	    unsigned int punctuation_counter = 0;
+	    unsigned int space_counter = 0;
 	    for(auto iterator = word.begin(); iterator != word.end(); iterator++)
 		{
 		    if(ispunct(*iterator))
 			{
 			    punctuation_counter++;
 			}
-			
-			else if(isspace(*iterator))
+		    else if(isspace(*iterator))
 			{
-				space_counter++;
+			    space_counter++;
 			}
 		}
 	    if(punctuation_counter == _word.size())
 		{
 		    throw WordContainsNoLetters();
 		}
-		else if(space_counter > 0)
+		
+		if(space_counter > 0)
 		{
-			throw WordContainsSpace();
+		    throw WordContainsSpace();
 		}
 	}
 
@@ -90,5 +91,8 @@ bool Word::operator==(const Word& rhs) const
 
 bool Word::isQueryable() const
 {
-    return false;
+    if (_word.size() >= MIN_SIZE_FOR_QUERY)
+		return true;
+	else
+		return false;
 }

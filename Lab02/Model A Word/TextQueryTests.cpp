@@ -64,10 +64,14 @@ TEST(Word, canIdentifyNonIdenticalWords)
 	EXPECT_TRUE(test_word.isQueryable());
 }
 
-// TEST(Word, isNotQueryableIfLessThanASpecifiedSize) {
-//// Write this test...
-//}
-//
+ TEST(Word, isNotQueryableIfLessThanASpecifiedSize) {
+// Write this test...
+	string test_string_2;
+	test_string_2.resize(1, 'I');
+	Word test_word_2(test_string_2);
+	EXPECT_FALSE(test_word_2.isQueryable());
+}
+
 //// ----------------------------------------------------
 //
 //// Test null case first - here, an empty line
