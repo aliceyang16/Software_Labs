@@ -72,22 +72,22 @@ TEST(Word, canIdentifyNonIdenticalWords)
 	EXPECT_FALSE(test_word_2.isQueryable());
 }
 
-//// ----------------------------------------------------
-//
-//// Test null case first - here, an empty line
-// TEST(Line, cannotFindWordInEmptyLine) {
-//   Line testline("");
-//   Word searchword("hello");
-//   EXPECT_FALSE(testline.contains(searchword));
-//}
-//
-// TEST(Line, canFindTheOnlyWordInLineWithOneWord) {
-//	Line testline("Stop");
-//	Word searchword("Stop");
-//	EXPECT_TRUE(testline.contains(searchword));
-//}
-//
-//// It is always good to write tests which test boundary conditions
+// ----------------------------------------------------
+
+// Test null case first - here, an empty line
+ TEST(Line, cannotFindWordInEmptyLine) {
+   Line testline("");
+   Word searchword("hello");
+   EXPECT_FALSE(testline.contains(searchword));
+}
+
+ TEST(Line, canFindTheOnlyWordInLineWithOneWord) {
+	Line testline("Stop");
+	Word searchword("Stop");
+	EXPECT_TRUE(testline.contains(searchword));
+}
+
+//It is always good to write tests which test boundary conditions
 // TEST(Line, canFindFirstAndLastWords) {
 //	Line testline("Walking on water and developing software from a specification are easy if both are frozen.");
 //	Word first_word_in_line("Walking");
@@ -96,7 +96,7 @@ TEST(Word, canIdentifyNonIdenticalWords)
 //	EXPECT_TRUE(testline.contains(second_word_in_line));
 //}
 //
-//// Test not only success scenarios but also failure scenarios.
+//only success scenarios but also failure scenarios.
 // TEST(Line, cannotFindWordNotInLine) {
 //	Line testline("I have always wished for my computer to be as easy to use as my telephone; my wish has come true
 //because I can no longer figure out how to use my telephone.");

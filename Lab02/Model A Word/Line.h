@@ -16,8 +16,7 @@ public:
 	bool contains(const Word& search_word) const;
 
 private:		
-
+	string _line;
 };
 
 #endif
-

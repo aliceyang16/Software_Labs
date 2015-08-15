@@ -45,7 +45,7 @@ Word::Word(const string& word)
 // overloads the equivalence operator which allows two Words to be compared using ==
 bool Word::operator==(const Word& rhs) const
 {
-    bool test = false;
+    bool test;
 
     auto word_1 = _word;
     auto word_2 = rhs._word;
@@ -81,7 +81,7 @@ bool Word::operator==(const Word& rhs) const
 			    test = false;
 			}
 		    else
-			test = true;
+				test = true;
 
 		    iterator1++;
 		    iterator2++;
@@ -93,7 +93,7 @@ bool Word::operator==(const Word& rhs) const
 bool Word::isQueryable() const
 {
     if(_word.size() >= MIN_SIZE_FOR_QUERY)
-	return true;
+		return true;
     else
-	return false;
+		return false;
 }
