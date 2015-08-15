@@ -16,7 +16,7 @@ Word::Word(const string& word)
 	{
 	    unsigned int punctuation_counter = 0;
 	    unsigned int space_counter = 0;
-	    for(auto iterator = word.begin(); iterator != word.end(); iterator++)
+	    for(auto iterator = _word.begin(); iterator != _word.end(); iterator++)
 		{
 		    if(ispunct(*iterator))
 			{
@@ -27,12 +27,13 @@ Word::Word(const string& word)
 			    space_counter++;
 			}
 		}
+		
 	    if(punctuation_counter == _word.size())
 		{
 		    throw WordContainsNoLetters();
 		}
-		
-		if(space_counter > 0)
+
+	    if(space_counter > 0)
 		{
 		    throw WordContainsSpace();
 		}
@@ -91,8 +92,8 @@ bool Word::operator==(const Word& rhs) const
 
 bool Word::isQueryable() const
 {
-    if (_word.size() >= MIN_SIZE_FOR_QUERY)
-		return true;
-	else
-		return false;
+    if(_word.size() >= MIN_SIZE_FOR_QUERY)
+	return true;
+    else
+	return false;
 }
