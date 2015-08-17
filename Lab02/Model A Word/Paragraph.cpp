@@ -11,18 +11,17 @@ void Paragraph::addLine(const Line& line)
 
 bool Paragraph::contains(const Word& search_word, vector<int>& line_numbers) const
 {
-    auto paragraph_iterator = _paragraph.begin();
-
-    while(paragraph_iterator != _paragraph.end())
+	bool test = false;
+	unsigned int line_counter = 0;
+	
+	for (auto temp_line : _paragraph)
 	{
-	    if(*paragraph_iterator.contains(search_word) == true)
+		line_counter ++;
+		if (temp_line.contains(search_word) == true)
 		{
-		    return true;
+			test = true;
+			line_numbers.push_back(line_counter);
 		}
-	    else
-			return false;
-			
-		paragraph_iterator++;
 	}
-
+	return test;
 }

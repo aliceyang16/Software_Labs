@@ -176,26 +176,27 @@ TEST(Word, canIdentifyNonIdenticalWords)
 	 paragraph_with_empty_line.addLine(not_empty_line);
 	 vector<int> line_number;
 	 EXPECT_TRUE(paragraph_with_empty_line.contains(the_word, line_number));
-	 vector<int> expected_line_value(2);
-	 EXPECT_TRUE()
+	 vector<int> expected_line_value;
+	 expected_line_value.push_back(2);
+	 EXPECT_TRUE(expected_line_value == line_number);
 }
 
-//// ----------------------------------------------------
-//
-//// Integration test - both Paragraph and File Reader are tested together
-// TEST(Paragraph, usingFileReaderCanFindWordAppearingMultipleTimesInParagraph) {
-//	// make sure that alice.txt is in the right location for this to work!
-//	// in Visual C++ and Code::Blocks, that location is the root directory of the project --
-//	// not the directory which contains the executable
-//	FileReader filereader("alice.txt");
-//	Paragraph paragraph;
-//	filereader.readFileInto(paragraph);
-//	Word search_word("Daddy");
-//	vector<int> line_numbers;
-//	EXPECT_TRUE(paragraph.contains(search_word, line_numbers));
-//	vector<int> expected_line_numbers;
-//	expected_line_numbers.push_back(1);
-//	expected_line_numbers.push_back(4);
-//	expected_line_numbers.push_back(6);
-//	EXPECT_TRUE(expected_line_numbers == line_numbers);
-//}
+// ----------------------------------------------------
+
+// Integration test - both Paragraph and File Reader are tested together
+ TEST(Paragraph, usingFileReaderCanFindWordAppearingMultipleTimesInParagraph) {
+	// make sure that alice.txt is in the right location for this to work!
+	// in Visual C++ and Code::Blocks, that location is the root directory of the project --
+	// not the directory which contains the executable
+	FileReader filereader("alice.txt");
+	Paragraph paragraph;
+	filereader.readFileInto(paragraph);
+	Word search_word("Daddy");
+	vector<int> line_numbers;
+	EXPECT_TRUE(paragraph.contains(search_word, line_numbers));
+	vector<int> expected_line_numbers;
+	expected_line_numbers.push_back(1);
+	expected_line_numbers.push_back(4);
+	expected_line_numbers.push_back(6);
+	EXPECT_TRUE(expected_line_numbers == line_numbers);
+}
