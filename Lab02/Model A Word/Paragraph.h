@@ -20,6 +20,7 @@ public:
 
 private:	
 	vector<Line> _paragraph;
+	bool testLine(const );
 };
 
 #endif

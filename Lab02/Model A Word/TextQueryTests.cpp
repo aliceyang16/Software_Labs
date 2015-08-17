@@ -128,28 +128,58 @@ TEST(Word, canIdentifyNonIdenticalWords)
 // ----------------------------------------------------
 
  TEST(Paragraph, cannotFindWordInEmptyParagraph) {
-	 Paragraph testparagraph;
+	 Paragraph test_paragraph;
 	 Line testline("");
 	 Word test_word("Hello");
-	 testparagraph.addLine(testline);
-	 vector<int> line_number(0);
-	 EXPECT_FALSE(testparagraph.contains(test_word,line_number));
+	 test_paragraph.addLine(testline);
+	 vector<int> line_number;
+	 EXPECT_FALSE(test_paragraph.contains(test_word,line_number));
 }
-//
-// TEST(Paragraph, cannotFindWordNotInParagraph) {
-//}
-//
-// TEST(Paragraph, canFindWordAppearingOnceAndReturnLineNumber) {
-//}
-//
-// TEST(Paragraph, canFindSameWordAppearingOnDifferentLinesAndReturnLineNumbers) {
-//}
-//
-// TEST(Paragraph, correctlyReturnsLineNumbersWhichAccountForAnEmptyLine) {
-//// If the first line of the paragraph is empty, and the word being searched for
-//// is on the second line, the vector returned should be: [2]
-//}
-//
+
+ TEST(Paragraph, cannotFindWordNotInParagraph) {
+	 Paragraph test_paragraph;
+	 Line test_line("The line is amazing only when it can be amazing.");
+	 Word test_word("THANKS");
+	 test_paragraph.addLine(test_line);
+	 vector<int> line_number;
+	 EXPECT_FALSE(test_paragraph.contains(test_word, line_number));
+}
+
+ TEST(Paragraph, canFindWordAppearingOnceAndReturnLineNumber) {
+	 Paragraph with_the_word;
+	 Line the_line_with_the_word("Hello, it is me that you're looking for?");
+	 Word the_word("looking");
+	 with_the_word.addLine(the_line_with_the_word);
+	 vector<int> line_number;
+	 EXPECT_TRUE(with_the_word.contains(the_word, line_number));
+}
+
+ TEST(Paragraph, canFindSameWordAppearingOnDifferentLinesAndReturnLineNumbers) {
+	 Paragraph with_the_word;
+	 Line the_line_with_the_word("Hello, it is me that you're looking for?");
+	 Line the_line_with_the_word_2("I can see it in your eyes, I can see it in your smile, whilst looking at you.");
+	 Word the_word("looking");
+	 with_the_word.addLine(the_line_with_the_word);
+	 with_the_word.addLine(the_line_with_the_word_2);
+	 vector<int> line_number;
+	 EXPECT_TRUE(with_the_word.contains(the_word, line_number));
+}
+
+ TEST(Paragraph, correctlyReturnsLineNumbersWhichAccountForAnEmptyLine) {
+// If the first line of the paragraph is empty, and the word being searched for
+// is on the second line, the vector returned should be: [2]
+	 Paragraph paragraph_with_empty_line;
+	 Line empty_line("");
+	 Line not_empty_line("Dancing in the moonlight, everybody feeling quite excited");
+	 Word the_word("moonlight");
+	 paragraph_with_empty_line.addLine(empty_line);
+	 paragraph_with_empty_line.addLine(not_empty_line);
+	 vector<int> line_number;
+	 EXPECT_TRUE(paragraph_with_empty_line.contains(the_word, line_number));
+	 vector<int> expected_line_value(2);
+	 EXPECT_TRUE()
+}
+
 //// ----------------------------------------------------
 //
 //// Integration test - both Paragraph and File Reader are tested together
