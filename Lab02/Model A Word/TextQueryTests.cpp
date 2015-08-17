@@ -125,10 +125,16 @@ TEST(Word, canIdentifyNonIdenticalWords)
    EXPECT_FALSE(testline.contains(too_small_to_query));
 }
 
-//// ----------------------------------------------------
-//
-// TEST(Paragraph, cannotFindWordInEmptyParagraph) {
-//}
+// ----------------------------------------------------
+
+ TEST(Paragraph, cannotFindWordInEmptyParagraph) {
+	 Paragraph testparagraph;
+	 Line testline("");
+	 Word test_word("Hello");
+	 testparagraph.addLine(testline);
+	 vector<int> line_number(0);
+	 EXPECT_FALSE(testparagraph.contains(test_word,line_number));
+}
 //
 // TEST(Paragraph, cannotFindWordNotInParagraph) {
 //}
