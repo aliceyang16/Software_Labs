@@ -88,22 +88,21 @@ TEST(Word, canIdentifyNonIdenticalWords)
 }
 
 //It is always good to write tests which test boundary conditions
-// TEST(Line, canFindFirstAndLastWords) {
-//	Line testline("Walking on water and developing software from a specification are easy if both are frozen.");
-//	Word first_word_in_line("Walking");
-//	EXPECT_TRUE(testline.contains(first_word_in_line));
-//	Word second_word_in_line("frozen");
-//	EXPECT_TRUE(testline.contains(second_word_in_line));
-//}
-//
+ TEST(Line, canFindFirstAndLastWords) {
+	Line testline("Walking on water and developing software from a specification are easy if both are frozen.");
+	Word first_word_in_line("Walking");
+	EXPECT_TRUE(testline.contains(first_word_in_line));
+	Word second_word_in_line("frozen");
+	EXPECT_TRUE(testline.contains(second_word_in_line));
+}
+
 //only success scenarios but also failure scenarios.
-// TEST(Line, cannotFindWordNotInLine) {
-//	Line testline("I have always wished for my computer to be as easy to use as my telephone; my wish has come true
-//because I can no longer figure out how to use my telephone.");
-//	Word word_not_in_line("cellphone");
-//	EXPECT_FALSE(testline.contains(word_not_in_line));
-//}
-//
+ TEST(Line, cannotFindWordNotInLine) {
+	Line testline("I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.");
+	Word word_not_in_line("cellphone");
+	EXPECT_FALSE(testline.contains(word_not_in_line));
+}
+
 // TEST(Line, canFindWordsIrrespectiveOfCase) {
 //	Line testline("You can stand on the shoulders of giants or a BIG enough pile of dwarfs, works either way.");
 //	Word lower_case("big");

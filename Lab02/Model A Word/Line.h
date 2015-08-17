@@ -3,6 +3,9 @@
 
 #include "Word.h"
 #include <string>
+#include <vector>
+#include <sstream>
+
 using namespace std;
 
 class Line
@@ -17,6 +20,7 @@ public:
 
 private:		
 	string _line;
+	vector<string> temp_line_word;
 };
 
 #endif
