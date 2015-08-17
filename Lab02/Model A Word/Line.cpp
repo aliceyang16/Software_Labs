@@ -25,13 +25,15 @@ Line::Line(const string& line)
 bool Line::contains(const Word& search_word) const
 {
     bool test = false;
+	
     if(_line.empty())
 		test = false;
     else 
 	{
-		for(auto word_iterator = temp_line_word.begin(); word_iterator != temp_line_word.end(); ++word_iterator)
+		for(auto word_iterator = temp_line_word.begin(); word_iterator != temp_line_word.end(); word_iterator++)
 		{
-			if(search_word == *word_iterator)
+			Word temp_line(*word_iterator);
+			if(search_word == temp_line)
 			{
 				test = true;
 			}
