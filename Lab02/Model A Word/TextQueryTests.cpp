@@ -103,30 +103,28 @@ TEST(Word, canIdentifyNonIdenticalWords)
 	EXPECT_FALSE(testline.contains(word_not_in_line));
 }
 
-// TEST(Line, canFindWordsIrrespectiveOfCase) {
-//	Line testline("You can stand on the shoulders of giants or a BIG enough pile of dwarfs, works either way.");
-//	Word lower_case("big");
-//	EXPECT_TRUE(testline.contains(lower_case));
-//	Word uppercase("STAND");
-//	EXPECT_TRUE(testline.contains(uppercase));
-//}
-//
-// TEST(Line, canFindWordsIrrespectiveOfPunctuation) {
-//	Line testline("How can you tell if a person is a programmer? They use nested parentheses in normal writing (at
-//least I do (sometimes)).");
-//	Word punctuation_word_1("programmer");
-//	EXPECT_TRUE(testline.contains(punctuation_word_1));
-//	Word punctuation_word_2("sometimes");
-//	EXPECT_TRUE(testline.contains(punctuation_word_2));
-//}
-//
-// TEST(Line, cannotFindWordWhichIsNotQueryable) {
-//   Line testline("Any fool can write code that a computer can understand. Good programmers write code that humans can
-//   understand.");
-//   Word too_small_to_query("a");
-//   EXPECT_FALSE(testline.contains(too_small_to_query));
-//}
-//
+ TEST(Line, canFindWordsIrrespectiveOfCase) {
+	Line testline("You can stand on the shoulders of giants or a BIG enough pile of dwarfs, works either way.");
+	Word lower_case("big");
+	EXPECT_TRUE(testline.contains(lower_case));
+	Word uppercase("STAND");
+	EXPECT_TRUE(testline.contains(uppercase));
+}
+
+ TEST(Line, canFindWordsIrrespectiveOfPunctuation) {
+	Line testline("How can you tell if a person is a programmer? They use nested parentheses in normal writing (at least I do (sometimes)).");
+	Word punctuation_word_1("programmer");
+	EXPECT_TRUE(testline.contains(punctuation_word_1));
+	Word punctuation_word_2("sometimes");
+	EXPECT_TRUE(testline.contains(punctuation_word_2));
+}
+
+ TEST(Line, cannotFindWordWhichIsNotQueryable) {
+   Line testline("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.");
+   Word too_small_to_query("a");
+   EXPECT_FALSE(testline.contains(too_small_to_query));
+}
+
 //// ----------------------------------------------------
 //
 // TEST(Paragraph, cannotFindWordInEmptyParagraph) {

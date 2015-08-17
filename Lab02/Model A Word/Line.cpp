@@ -39,5 +39,9 @@ bool Line::contains(const Word& search_word) const
 			}
 		}
 	}
+	
+	if (search_word.isQueryable() == false)
+		test = false;
+		
     return test;
 }

@@ -66,7 +66,7 @@ bool Word::operator==(const Word& rhs) const
 bool Word::isQueryable() const
 {
     if(_word.size() >= MIN_SIZE_FOR_QUERY)
-	return true;
+		return true;
     else
-	return false;
+		return false;
 }
